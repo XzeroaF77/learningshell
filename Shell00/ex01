@@ -2,9 +2,9 @@ touch testShell00
 type ls -l 
 
 -rw- r--r -- 1 ... 0 April 15 20:58
--rw- //u=owner: read-only (4)
-r--r //g=group: read+execute(5)
--- //o=others: read+execute (5)
+-rw- //u=owner: read, write and execute
+r--r //g=group: read, write and execute
+-- //o=others: read+execute
 
 chmod u-w,g+x,o+x testShell00
 

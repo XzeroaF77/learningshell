@@ -1,0 +1,30 @@
+touch testShell00
+type ls -l 
+
+-rw- r--r -- 1 ... 0 April 15 20:58
+-rw- //u=owner: read-only (4)
+r--r //g=group: read+execute(5)
+-- //o=others: read+execute (5)
+
+chmod u-w,g+x,o+x testShell00
+
+type ls -l
+-r-- r-xr -x 1 ... 0 April 15 20:58
+
+chmod u+w testShell00//turn on write function for edit day from 0 to 40
+type nano testShell00
+type 40 character in nano 123456789012345678901234567890123456789
+Exit nano
+type ls -l
+-r-- r-xr -x 1 ... 40 April 15 20:58
+chmod u-w test//close the write function
+
+
+touch -t 06012342 testShell00
+type ls -l
+-r-- r-xr -x 1 ... 40 June 1 2025
+
+tar -cf testShell00.tar testShell00 // create tar file
+remove testShell00
+
+tar -xf testShell00.tar// run the test
